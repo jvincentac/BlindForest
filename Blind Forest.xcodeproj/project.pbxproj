@@ -12,6 +12,8 @@
 		9D485B2E249215E700EF06E9 /* Game.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D485B2D249215E700EF06E9 /* Game.storyboard */; };
 		9D485B302492160F00EF06E9 /* gameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D485B2F2492160F00EF06E9 /* gameViewController.swift */; };
 		9D485B3424921A2400EF06E9 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D485B3324921A2400EF06E9 /* MainPageViewController.swift */; };
+		9D838005249225CE0090A604 /* Results.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D838004249225CE0090A604 /* Results.storyboard */; };
+		9D838007249225E30090A604 /* resultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D838006249225E30090A604 /* resultsViewController.swift */; };
 		EC051ADE24911AB700089CCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC051ADD24911AB700089CCF /* AppDelegate.swift */; };
 		EC051AE024911AB700089CCF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC051ADF24911AB700089CCF /* SceneDelegate.swift */; };
 		EC051AE224911AB700089CCF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC051AE124911AB700089CCF /* ViewController.swift */; };
@@ -28,6 +30,8 @@
 		9D485B2D249215E700EF06E9 /* Game.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Game.storyboard; sourceTree = "<group>"; };
 		9D485B2F2492160F00EF06E9 /* gameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gameViewController.swift; sourceTree = "<group>"; };
 		9D485B3324921A2400EF06E9 /* MainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
+		9D838004249225CE0090A604 /* Results.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Results.storyboard; sourceTree = "<group>"; };
+		9D838006249225E30090A604 /* resultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resultsViewController.swift; sourceTree = "<group>"; };
 		EC051ADA24911AB700089CCF /* Blind Forest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Blind Forest.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC051ADD24911AB700089CCF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC051ADF24911AB700089CCF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +83,15 @@
 			path = MainPage;
 			sourceTree = "<group>";
 		};
+		9D838008249225E90090A604 /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				9D838004249225CE0090A604 /* Results.storyboard */,
+				9D838006249225E30090A604 /* resultsViewController.swift */,
+			);
+			path = Result;
+			sourceTree = "<group>";
+		};
 		EC051AD124911AB700089CCF = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +116,7 @@
 				9D485B3224921A0B00EF06E9 /* Onboarding */,
 				9D485B3524921A2800EF06E9 /* MainPage */,
 				9D485B31249219F900EF06E9 /* Game */,
+				9D838008249225E90090A604 /* Result */,
 				EC051AE924911AB900089CCF /* Assets.xcassets */,
 				EC051AEB24911AB900089CCF /* LaunchScreen.storyboard */,
 				EC051AEE24911AB900089CCF /* Info.plist */,
@@ -172,6 +186,7 @@
 			files = (
 				9D485B2E249215E700EF06E9 /* Game.storyboard in Resources */,
 				EC051AED24911AB900089CCF /* LaunchScreen.storyboard in Resources */,
+				9D838005249225CE0090A604 /* Results.storyboard in Resources */,
 				EC758FCD2491DAD000F5DC8A /* Rain.sks in Resources */,
 				9D485B2C249215B000EF06E9 /* MainPage.storyboard in Resources */,
 				EC051AEA24911AB900089CCF /* Assets.xcassets in Resources */,
@@ -193,6 +208,7 @@
 				EC051AE224911AB700089CCF /* ViewController.swift in Sources */,
 				EC051ADE24911AB700089CCF /* AppDelegate.swift in Sources */,
 				EC051AE024911AB700089CCF /* SceneDelegate.swift in Sources */,
+				9D838007249225E30090A604 /* resultsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
