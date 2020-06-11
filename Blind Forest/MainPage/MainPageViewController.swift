@@ -21,4 +21,14 @@ class MainPageViewController: UIViewController {
         sb.modalPresentationStyle = .fullScreen
         self.present(sb, animated: false, completion: nil)
     }
+    
+    @IBAction func toOnboarding(_ sender: Any) {
+        backToOnboarding()
+    }
+    
+    func backToOnboarding() {
+        let sb = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "onboarding")
+        sb.modalPresentationStyle = .fullScreen
+        self.present(sb, animated: false, completion: nil)
+    }
 }

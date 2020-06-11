@@ -19,12 +19,10 @@ class ViewController: UIViewController {
     
     var tapCounter = 0
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         opening()
         addRain()
-        UserDefaults.standard.set(false, forKey: "visited")
     }
     override var prefersStatusBarHidden: Bool {
         return true
@@ -78,6 +76,7 @@ class ViewController: UIViewController {
             forestImageView.image = #imageLiteral(resourceName: "forestBg3")
         }
         else if tapCounter == 4 {
+            UserDefaults.standard.set(false, forKey: "visited")
             let sb = UIStoryboard(name: "MainPage", bundle: nil).instantiateViewController(withIdentifier: "main")
             sb.modalPresentationStyle = .fullScreen
             self.present(sb, animated: false, completion: nil)
