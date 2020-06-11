@@ -12,9 +12,7 @@ class MainPageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
-    
 
     @IBAction func toGame(_ sender: Any) {
         let sb = UIStoryboard(name: "Game", bundle: nil).instantiateViewController(withIdentifier: "game")

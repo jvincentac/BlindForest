@@ -37,7 +37,7 @@ class gameViewController: UIViewController {
     ]
     
     var playerPosition : [Int] = []
-    var time = 10
+    var time = 60
     let emitterNode = SKEmitterNode(fileNamed: "Rain.sks")!
     
     override func viewDidLoad() {
@@ -46,6 +46,7 @@ class gameViewController: UIViewController {
         setupSwipeGesture()
         addRain()
         timer.text = String(time)
+        
         Timer.scheduledTimer(withTimeInterval: TimeInterval(Int.random(in: 8...10)), repeats: true) { timer in
             self.setupPageAnimation()
         }
