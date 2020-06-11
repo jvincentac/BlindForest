@@ -74,6 +74,10 @@ class ViewController: UIViewController {
             forestImageView.image = #imageLiteral(resourceName: "forestBg3")
         }
         else if tapCounter == 3 {
+            storyLabel.text = "Use Your Earphone"
+            forestImageView.image = #imageLiteral(resourceName: "forestBg3")
+        }
+        else if tapCounter == 4 {
             let sb = UIStoryboard(name: "MainPage", bundle: nil).instantiateViewController(withIdentifier: "main")
             sb.modalPresentationStyle = .fullScreen
             self.present(sb, animated: false, completion: nil)

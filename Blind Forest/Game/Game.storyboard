@@ -47,6 +47,30 @@
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="-216.29464285714286"/>
         </scene>
+        <!--Game View Controller-->
+        <scene sceneID="aLE-AZ-adv">
+            <objects>
+                <viewController id="VwC-HO-5L5" customClass="gameViewController" customModule="Blind_Forest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fm0-2k-jk8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gQk-S8-h60">
+                                <rect key="frame" x="87" y="142" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="MNP-1C-ruX"/>
+                    </view>
+                    <connections>
+                        <outlet property="gif" destination="gQk-S8-h60" id="obG-NX-Vkt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qAd-ce-qTC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="948" y="-216"/>
+        </scene>
     </scenes>
     <resources>
         <image name="forestBg1" width="1656" height="3584"/>

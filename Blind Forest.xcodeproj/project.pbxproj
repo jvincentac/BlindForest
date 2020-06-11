@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D3A0AD224922BBB0032EBEE /* tenor.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9D3A0AD124922BBA0032EBEE /* tenor.gif */; };
 		9D485B2A2492141200EF06E9 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D485B292492141200EF06E9 /* FirstViewController.swift */; };
 		9D485B2C249215B000EF06E9 /* MainPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D485B2B249215B000EF06E9 /* MainPage.storyboard */; };
 		9D485B2E249215E700EF06E9 /* Game.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D485B2D249215E700EF06E9 /* Game.storyboard */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9D3A0AD124922BBA0032EBEE /* tenor.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = tenor.gif; sourceTree = "<group>"; };
 		9D485B292492141200EF06E9 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		9D485B2B249215B000EF06E9 /* MainPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainPage.storyboard; sourceTree = "<group>"; };
 		9D485B2D249215E700EF06E9 /* Game.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Game.storyboard; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 			children = (
 				EC051ADD24911AB700089CCF /* AppDelegate.swift */,
 				EC051ADF24911AB700089CCF /* SceneDelegate.swift */,
+				9D3A0AD124922BBA0032EBEE /* tenor.gif */,
 				9D485B3224921A0B00EF06E9 /* Onboarding */,
 				9D485B3524921A2800EF06E9 /* MainPage */,
 				9D485B31249219F900EF06E9 /* Game */,
@@ -189,6 +192,7 @@
 				9D838005249225CE0090A604 /* Results.storyboard in Resources */,
 				EC758FCD2491DAD000F5DC8A /* Rain.sks in Resources */,
 				9D485B2C249215B000EF06E9 /* MainPage.storyboard in Resources */,
+				9D3A0AD224922BBB0032EBEE /* tenor.gif in Resources */,
 				EC051AEA24911AB900089CCF /* Assets.xcassets in Resources */,
 				EC051AE524911AB700089CCF /* Main.storyboard in Resources */,
 			);

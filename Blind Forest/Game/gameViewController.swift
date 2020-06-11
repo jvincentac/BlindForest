@@ -14,23 +14,24 @@ class gameViewController: UIViewController {
     @IBOutlet weak var blackView: UIView!
     @IBOutlet weak var forestImageView: UIImageView!
     @IBOutlet weak var timer: UILabel!
+    @IBOutlet weak var gif: UIImageView!
     
     //0 tembok
     //1 jalan
-    //2 persimpangan
-    //3 selesai
+    //2 persimpangan kiri, 3 persimpangan kanan, 4 persimpangan atas
+    //5 selesai
     
     let map : [[Int]] = [
         [0,0,0,0,0,0],
-        [0,1,1,1,3,0],
+        [0,1,1,1,5,0],
         [0,1,0,0,0,0],
         [0,1,1,0,0,0],
         [0,0,1,0,0,0],
-        [0,1,2,1,0,0],
+        [0,1,4,1,0,0],
         [0,1,0,1,0,0],
         [0,1,0,0,1,0],
         [0,1,2,1,1,0],
-        [0,0,3,0,0,0],
+        [0,0,1,0,0,0],
         [0,1,1,0,0,0],
         [0,0,0,0,0,0]
     ]
@@ -63,6 +64,7 @@ class gameViewController: UIViewController {
                 self.timer.text = String(self.time)
             }
         }
+        
     }
     
     func setupPageAnimation() {
@@ -145,47 +147,45 @@ class gameViewController: UIViewController {
         if check(x: playerPosition[0], y: playerPosition[1]-1) {
             playerPosition[1] -= 1
         }
-        else {
-            //play sound tabrak
-        }
-        print(playerPosition)
     }
     
     func swipeRight() {
         if check(x: playerPosition[0]+1, y: playerPosition[1]) {
             playerPosition[0] += 1
         }
-        else {
-            //play sound tabrak
-        }
-        print(playerPosition)
     }
     
     func swipeLeft() {
         if check(x: playerPosition[0]-1, y: playerPosition[1]) {
             playerPosition[0] -= 1
         }
-        else {
-            //play sound tabrak
-        }
-        print(playerPosition)
+        
     }
     
     func swipeDown() {
         if check(x: playerPosition[0], y: playerPosition[1]+1) {
             playerPosition[1] += 1
         }
-        else {
-            //play sound tabrak
-        }
-        print(playerPosition)
     }
     
     func check(x: Int, y: Int) -> Bool {
         if map[y][x] == 0 {
+            //play sound tabrak
             return false
         }
+        else if map[y][x] == 1 {
+            
+        }
+        else if map[y][x] == 2 {
+            
+        }
         else if map[y][x] == 3 {
+            
+        }
+        else if map[y][x] == 4 {
+            
+        }
+        else if map[y][x] == 5 {
             //pindah ke page menang
             let sb = UIStoryboard(name: "Results", bundle: nil).instantiateViewController(withIdentifier: "win")
             sb.modalPresentationStyle = .fullScreen
