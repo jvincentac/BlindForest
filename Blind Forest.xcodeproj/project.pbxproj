@@ -1,0 +1,408 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9D485B2A2492141200EF06E9 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D485B292492141200EF06E9 /* FirstViewController.swift */; };
+		9D485B2C249215B000EF06E9 /* MainPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D485B2B249215B000EF06E9 /* MainPage.storyboard */; };
+		9D485B2E249215E700EF06E9 /* Game.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D485B2D249215E700EF06E9 /* Game.storyboard */; };
+		9D485B302492160F00EF06E9 /* gameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D485B2F2492160F00EF06E9 /* gameViewController.swift */; };
+		9D485B3424921A2400EF06E9 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D485B3324921A2400EF06E9 /* MainPageViewController.swift */; };
+		EC051ADE24911AB700089CCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC051ADD24911AB700089CCF /* AppDelegate.swift */; };
+		EC051AE024911AB700089CCF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC051ADF24911AB700089CCF /* SceneDelegate.swift */; };
+		EC051AE224911AB700089CCF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC051AE124911AB700089CCF /* ViewController.swift */; };
+		EC051AE524911AB700089CCF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC051AE324911AB700089CCF /* Main.storyboard */; };
+		EC051AE824911AB700089CCF /* Blind_Forest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EC051AE624911AB700089CCF /* Blind_Forest.xcdatamodeld */; };
+		EC051AEA24911AB900089CCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC051AE924911AB900089CCF /* Assets.xcassets */; };
+		EC051AED24911AB900089CCF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC051AEB24911AB900089CCF /* LaunchScreen.storyboard */; };
+		EC758FCD2491DAD000F5DC8A /* Rain.sks in Resources */ = {isa = PBXBuildFile; fileRef = EC758FCC2491DAD000F5DC8A /* Rain.sks */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9D485B292492141200EF06E9 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		9D485B2B249215B000EF06E9 /* MainPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainPage.storyboard; sourceTree = "<group>"; };
+		9D485B2D249215E700EF06E9 /* Game.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Game.storyboard; sourceTree = "<group>"; };
+		9D485B2F2492160F00EF06E9 /* gameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gameViewController.swift; sourceTree = "<group>"; };
+		9D485B3324921A2400EF06E9 /* MainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
+		EC051ADA24911AB700089CCF /* Blind Forest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Blind Forest.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC051ADD24911AB700089CCF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EC051ADF24911AB700089CCF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		EC051AE124911AB700089CCF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EC051AE424911AB700089CCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EC051AE724911AB700089CCF /* Blind_Forest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Blind_Forest.xcdatamodel; sourceTree = "<group>"; };
+		EC051AE924911AB900089CCF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EC051AEC24911AB900089CCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EC051AEE24911AB900089CCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC758FCC2491DAD000F5DC8A /* Rain.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Rain.sks; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EC051AD724911AB700089CCF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9D485B31249219F900EF06E9 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				9D485B2D249215E700EF06E9 /* Game.storyboard */,
+				9D485B2F2492160F00EF06E9 /* gameViewController.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		9D485B3224921A0B00EF06E9 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				EC051AE124911AB700089CCF /* ViewController.swift */,
+				EC051AE324911AB700089CCF /* Main.storyboard */,
+				9D485B292492141200EF06E9 /* FirstViewController.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		9D485B3524921A2800EF06E9 /* MainPage */ = {
+			isa = PBXGroup;
+			children = (
+				9D485B2B249215B000EF06E9 /* MainPage.storyboard */,
+				9D485B3324921A2400EF06E9 /* MainPageViewController.swift */,
+			);
+			path = MainPage;
+			sourceTree = "<group>";
+		};
+		EC051AD124911AB700089CCF = {
+			isa = PBXGroup;
+			children = (
+				EC051ADC24911AB700089CCF /* Blind Forest */,
+				EC051ADB24911AB700089CCF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EC051ADB24911AB700089CCF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EC051ADA24911AB700089CCF /* Blind Forest.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EC051ADC24911AB700089CCF /* Blind Forest */ = {
+			isa = PBXGroup;
+			children = (
+				EC051ADD24911AB700089CCF /* AppDelegate.swift */,
+				EC051ADF24911AB700089CCF /* SceneDelegate.swift */,
+				9D485B3224921A0B00EF06E9 /* Onboarding */,
+				9D485B3524921A2800EF06E9 /* MainPage */,
+				9D485B31249219F900EF06E9 /* Game */,
+				EC051AE924911AB900089CCF /* Assets.xcassets */,
+				EC051AEB24911AB900089CCF /* LaunchScreen.storyboard */,
+				EC051AEE24911AB900089CCF /* Info.plist */,
+				EC051AE624911AB700089CCF /* Blind_Forest.xcdatamodeld */,
+				EC758FCC2491DAD000F5DC8A /* Rain.sks */,
+			);
+			path = "Blind Forest";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EC051AD924911AB700089CCF /* Blind Forest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC051AF124911AB900089CCF /* Build configuration list for PBXNativeTarget "Blind Forest" */;
+			buildPhases = (
+				EC051AD624911AB700089CCF /* Sources */,
+				EC051AD724911AB700089CCF /* Frameworks */,
+				EC051AD824911AB700089CCF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Blind Forest";
+			productName = "Blind Forest";
+			productReference = EC051ADA24911AB700089CCF /* Blind Forest.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EC051AD224911AB700089CCF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = HKV;
+				TargetAttributes = {
+					EC051AD924911AB700089CCF = {
+						CreatedOnToolsVersion = 11.5;
+					};
+				};
+			};
+			buildConfigurationList = EC051AD524911AB700089CCF /* Build configuration list for PBXProject "Blind Forest" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EC051AD124911AB700089CCF;
+			productRefGroup = EC051ADB24911AB700089CCF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EC051AD924911AB700089CCF /* Blind Forest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EC051AD824911AB700089CCF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D485B2E249215E700EF06E9 /* Game.storyboard in Resources */,
+				EC051AED24911AB900089CCF /* LaunchScreen.storyboard in Resources */,
+				EC758FCD2491DAD000F5DC8A /* Rain.sks in Resources */,
+				9D485B2C249215B000EF06E9 /* MainPage.storyboard in Resources */,
+				EC051AEA24911AB900089CCF /* Assets.xcassets in Resources */,
+				EC051AE524911AB700089CCF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EC051AD624911AB700089CCF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D485B302492160F00EF06E9 /* gameViewController.swift in Sources */,
+				9D485B3424921A2400EF06E9 /* MainPageViewController.swift in Sources */,
+				9D485B2A2492141200EF06E9 /* FirstViewController.swift in Sources */,
+				EC051AE824911AB700089CCF /* Blind_Forest.xcdatamodeld in Sources */,
+				EC051AE224911AB700089CCF /* ViewController.swift in Sources */,
+				EC051ADE24911AB700089CCF /* AppDelegate.swift in Sources */,
+				EC051AE024911AB700089CCF /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EC051AE324911AB700089CCF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC051AE424911AB700089CCF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EC051AEB24911AB900089CCF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC051AEC24911AB900089CCF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EC051AEF24911AB900089CCF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EC051AF024911AB900089CCF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EC051AF224911AB900089CCF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4C46CAZW8L;
+				INFOPLIST_FILE = "Blind Forest/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.HKV.Blind-Forest";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EC051AF324911AB900089CCF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4C46CAZW8L;
+				INFOPLIST_FILE = "Blind Forest/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.HKV.Blind-Forest";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EC051AD524911AB700089CCF /* Build configuration list for PBXProject "Blind Forest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC051AEF24911AB900089CCF /* Debug */,
+				EC051AF024911AB900089CCF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC051AF124911AB900089CCF /* Build configuration list for PBXNativeTarget "Blind Forest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC051AF224911AB900089CCF /* Debug */,
+				EC051AF324911AB900089CCF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EC051AE624911AB700089CCF /* Blind_Forest.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EC051AE724911AB700089CCF /* Blind_Forest.xcdatamodel */,
+			);
+			currentVersion = EC051AE724911AB700089CCF /* Blind_Forest.xcdatamodel */;
+			path = Blind_Forest.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = EC051AD224911AB700089CCF /* Project object */;
+}
