@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		9D3A0AD224922BBB0032EBEE /* tenor.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9D3A0AD124922BBA0032EBEE /* tenor.gif */; };
+		9D3A0AD424937F9E0032EBEE /* tutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3A0AD324937F9E0032EBEE /* tutorialViewController.swift */; };
+		9D3A0AD72493951B0032EBEE /* magic.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9D3A0AD52493951B0032EBEE /* magic.sks */; };
+		9D3A0AD82493951B0032EBEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D3A0AD62493951B0032EBEE /* Assets.xcassets */; };
+		9D3A0ADA249398620032EBEE /* redSnow.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9D3A0AD9249398620032EBEE /* redSnow.sks */; };
 		9D485B2A2492141200EF06E9 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D485B292492141200EF06E9 /* FirstViewController.swift */; };
 		9D485B2C249215B000EF06E9 /* MainPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D485B2B249215B000EF06E9 /* MainPage.storyboard */; };
 		9D485B2E249215E700EF06E9 /* Game.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D485B2D249215E700EF06E9 /* Game.storyboard */; };
@@ -40,6 +44,10 @@
 
 /* Begin PBXFileReference section */
 		9D3A0AD124922BBA0032EBEE /* tenor.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = tenor.gif; sourceTree = "<group>"; };
+		9D3A0AD324937F9E0032EBEE /* tutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tutorialViewController.swift; sourceTree = "<group>"; };
+		9D3A0AD52493951B0032EBEE /* magic.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = magic.sks; sourceTree = "<group>"; };
+		9D3A0AD62493951B0032EBEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9D3A0AD9249398620032EBEE /* redSnow.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = redSnow.sks; sourceTree = "<group>"; };
 		9D485B292492141200EF06E9 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		9D485B2B249215B000EF06E9 /* MainPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainPage.storyboard; sourceTree = "<group>"; };
 		9D485B2D249215E700EF06E9 /* Game.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Game.storyboard; sourceTree = "<group>"; };
@@ -88,6 +96,7 @@
 			children = (
 				9D485B2D249215E700EF06E9 /* Game.storyboard */,
 				9D485B2F2492160F00EF06E9 /* gameViewController.swift */,
+				9D3A0AD324937F9E0032EBEE /* tutorialViewController.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -115,7 +124,10 @@
 			isa = PBXGroup;
 			children = (
 				9D838004249225CE0090A604 /* Results.storyboard */,
+				9D3A0AD52493951B0032EBEE /* magic.sks */,
+				9D3A0AD62493951B0032EBEE /* Assets.xcassets */,
 				9D838006249225E30090A604 /* resultsViewController.swift */,
+				9D3A0AD9249398620032EBEE /* redSnow.sks */,
 			);
 			path = Result;
 			sourceTree = "<group>";
@@ -238,8 +250,10 @@
 				9D485B2E249215E700EF06E9 /* Game.storyboard in Resources */,
 				CAC59C16249358FD00D6C9D6 /* over here Kenji.mp3 in Resources */,
 				EC051AED24911AB900089CCF /* LaunchScreen.storyboard in Resources */,
+				9D3A0AD82493951B0032EBEE /* Assets.xcassets in Resources */,
 				9D838005249225CE0090A604 /* Results.storyboard in Resources */,
 				EC758FCD2491DAD000F5DC8A /* Rain.sks in Resources */,
+				9D3A0ADA249398620032EBEE /* redSnow.sks in Resources */,
 				CAC59C1A249358FD00D6C9D6 /* help Kenji.mp3 in Resources */,
 				CAC59C17249358FD00D6C9D6 /* game over.mp3 in Resources */,
 				CAC59C15249358FD00D6C9D6 /* step_1.mp3 in Resources */,
@@ -251,6 +265,7 @@
 				CAC59C1E249358FD00D6C9D6 /* block.mp3 in Resources */,
 				CAC59C19249358FD00D6C9D6 /* thunder.mp3 in Resources */,
 				CAC59C18249358FD00D6C9D6 /* grass.mp3 in Resources */,
+				9D3A0AD72493951B0032EBEE /* magic.sks in Resources */,
 				CAC59C1C249358FD00D6C9D6 /* step_2.mp3 in Resources */,
 				EC051AEA24911AB900089CCF /* Assets.xcassets in Resources */,
 				EC051AE524911AB700089CCF /* Main.storyboard in Resources */,
@@ -267,6 +282,7 @@
 			files = (
 				9D485B302492160F00EF06E9 /* gameViewController.swift in Sources */,
 				9D485B3424921A2400EF06E9 /* MainPageViewController.swift in Sources */,
+				9D3A0AD424937F9E0032EBEE /* tutorialViewController.swift in Sources */,
 				9D485B2A2492141200EF06E9 /* FirstViewController.swift in Sources */,
 				EC051AE824911AB700089CCF /* Blind_Forest.xcdatamodeld in Sources */,
 				EC051AE224911AB700089CCF /* ViewController.swift in Sources */,

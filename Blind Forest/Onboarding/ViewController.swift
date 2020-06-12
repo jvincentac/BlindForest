@@ -26,7 +26,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         opening()
         addRain()
-//        bgmAudio()
     }
     override var prefersStatusBarHidden: Bool {
         return true
@@ -62,7 +61,6 @@ class ViewController: UIViewController {
     }
     
     private func thunderEffect() {
-
         storyLabel.alpha = 0
         blackView.alpha = 0
         
@@ -75,20 +73,16 @@ class ViewController: UIViewController {
             forestImageView.image = #imageLiteral(resourceName: "forestBg2")
         } else if tapCounter == 2 {
             thunderAudio()
-            storyLabel.text = "You must find these stone but remember, always follow the sound that guide you."
+            storyLabel.text = "You must find these stone but remember, always follow the sound of spirit that guide you."
             forestImageView.image = #imageLiteral(resourceName: "forestBg3")
         }
         else if tapCounter == 3 {
             thunderAudio()
-            storyLabel.text = "Use Your Earphone"
+            storyLabel.text = "Use Your Earphone!"
             forestImageView.image = #imageLiteral(resourceName: "forestBg3")
         }
         else if tapCounter == 4 {
-            UserDefaults.standard.set(false, forKey: "visited")
-            let sb = UIStoryboard(name: "MainPage", bundle: nil).instantiateViewController(withIdentifier: "main")
-            sb.modalPresentationStyle = .fullScreen
-            self.present(sb, animated: false, completion: nil)
-//            stopAllAudio()
+            storyLabel.text = ""
         }
         
         UIView.animateKeyframes(
@@ -107,7 +101,14 @@ class ViewController: UIViewController {
                     self.storyLabel.alpha = 1
                 }
         },
-            completion: nil)
+            completion: { (isEnded) in
+                if self.tapCounter == 4 {
+                    UserDefaults.standard.set(false, forKey: "visited")
+                    let sb = UIStoryboard(name: "MainPage", bundle: nil).instantiateViewController(withIdentifier: "main")
+                    sb.modalPresentationStyle = .fullScreen
+                    self.present(sb, animated: false, completion: nil)
+                }
+            })
     }
     func bgmAudio(){
 

@@ -18,13 +18,16 @@ class gameViewController: UIViewController {
     @IBOutlet weak var gif: UIImageView!
     var soundArray : [AVAudioPlayer] = []
     var step = 0
+    var stage = 0
     
     //0 tembok
     //1 jalan
     //2 persimpangan kiri, 3 persimpangan kanan, 4 persimpangan atas
     //5 selesai
     
-    let map : [[Int]] = [
+    var map : [[Int]] = []
+    
+    let map1 : [[Int]] = [
         [0,0,0,0,0,0],
         [0,1,1,1,5,0],
         [0,1,0,0,0,0],
@@ -35,7 +38,37 @@ class gameViewController: UIViewController {
         [0,1,0,0,1,0],
         [0,1,2,1,1,0],
         [0,0,1,0,0,0],
-        [0,1,3,0,0,0],
+        [0,1,1,0,0,0],
+        [0,0,0,0,0,0]
+    ]
+    
+    let map2 : [[Int]] = [
+        [0,0,0,0,0,0],
+        [0,0,1,1,5,0],
+        [0,0,1,0,0,0],
+        [0,0,1,1,0,0],
+        [0,0,0,1,1,0],
+        [0,0,0,0,1,0],
+        [0,0,0,0,1,0],
+        [0,0,0,0,1,0],
+        [0,0,1,1,4,0],
+        [0,0,1,0,1,0],
+        [0,1,1,0,1,0],
+        [0,0,0,0,0,0]
+    ]
+
+    let map3 : [[Int]] = [
+        [0,0,0,0,0,0],
+        [0,0,0,0,5,0],
+        [0,1,3,1,1,0],
+        [0,0,1,0,0,0],
+        [0,0,1,1,1,0],
+        [0,0,0,0,1,0],
+        [0,1,1,1,4,0],
+        [0,0,0,0,1,0],
+        [0,1,1,3,1,0],
+        [0,1,0,1,0,0],
+        [0,1,0,1,1,0],
         [0,0,0,0,0,0]
     ]
     var detik = Timer()
@@ -46,7 +79,7 @@ class gameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        bgmAudio()
+        setStage()
         playerPosition = [1,map.count-2]
         setupSwipeGesture()
         addRain()
@@ -64,8 +97,9 @@ class gameViewController: UIViewController {
                 self.detik.invalidate()
                 self.countdown.invalidate()
                 self.stopAllAudio()
-                let sb = UIStoryboard(name: "Results", bundle: nil).instantiateViewController(withIdentifier: "lose")
+                let sb = UIStoryboard(name: "Results", bundle: nil).instantiateViewController(withIdentifier: "result") as! resultsViewController
                 sb.modalPresentationStyle = .fullScreen
+                sb.win = false
                 self.present(sb
                     , animated: false, completion: nil)
             }else if self.time == 30{
@@ -79,6 +113,29 @@ class gameViewController: UIViewController {
             }
         }
         
+    }
+    
+    func setStage() {
+        if let stageTemp = UserDefaults.standard.string(forKey: "stage") {
+            stage = Int(stageTemp)!
+        }
+        else {
+            stage = 1
+            UserDefaults.standard.set(stage, forKey: "stage")
+        }
+        chooseMap()
+    }
+    
+    func chooseMap() {
+        if stage == 1 {
+            map = map1
+        }
+        else if stage == 2 {
+            map = map2
+        }
+        else if stage == 3 {
+            map = map3
+        }
     }
     
     func setupPageAnimation() {
@@ -159,31 +216,31 @@ class gameViewController: UIViewController {
     }
     
     func swipeUp() {
-        if check(x: playerPosition[0], y: playerPosition[1]-1) {
+        if check(x: playerPosition[0], y: playerPosition[1]-1, map: map) {
             playerPosition[1] -= 1
         }
     }
     
     func swipeRight() {
-        if check(x: playerPosition[0]+1, y: playerPosition[1]) {
+        if check(x: playerPosition[0]+1, y: playerPosition[1], map: map) {
             playerPosition[0] += 1
         }
     }
     
     func swipeLeft() {
-        if check(x: playerPosition[0]-1, y: playerPosition[1]) {
+        if check(x: playerPosition[0]-1, y: playerPosition[1], map: map) {
             playerPosition[0] -= 1
         }
         
     }
     
     func swipeDown() {
-        if check(x: playerPosition[0], y: playerPosition[1]+1) {
+        if check(x: playerPosition[0], y: playerPosition[1]+1, map: map) {
             playerPosition[1] += 1
         }
     }
     
-    func check(x: Int, y: Int) -> Bool {
+    func check(x: Int, y: Int, map: [[Int]]) -> Bool {
         if map[y][x] == 0 {
             blockAudio()
             return false
@@ -209,8 +266,10 @@ class gameViewController: UIViewController {
             countdown.invalidate()
             stepAudio()
             stopAllAudio()
-            let sb = UIStoryboard(name: "Results", bundle: nil).instantiateViewController(withIdentifier: "win")
+            UserDefaults.standard.set(stage + 1, forKey: "stage")
+            let sb = UIStoryboard(name: "Results", bundle: nil).instantiateViewController(withIdentifier: "result") as! resultsViewController
             sb.modalPresentationStyle = .fullScreen
+            sb.win = true
             self.present(sb
                 , animated: false, completion: nil)
         }

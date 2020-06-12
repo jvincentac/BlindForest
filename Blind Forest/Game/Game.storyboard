@@ -47,24 +47,32 @@
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="-216.29464285714286"/>
         </scene>
-        <!--Game View Controller-->
+        <!--Tutorial View Controller-->
         <scene sceneID="aLE-AZ-adv">
             <objects>
-                <viewController id="VwC-HO-5L5" customClass="gameViewController" customModule="Blind_Forest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="tutorial" id="VwC-HO-5L5" customClass="tutorialViewController" customModule="Blind_Forest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fm0-2k-jk8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gQk-S8-h60">
-                                <rect key="frame" x="87" y="142" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe to Move" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zTx-7Y-zvu">
+                                <rect key="frame" x="40" y="430" width="334" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="zTx-7Y-zvu" firstAttribute="centerX" secondItem="fm0-2k-jk8" secondAttribute="centerX" id="SgC-FZ-npP"/>
+                            <constraint firstItem="MNP-1C-ruX" firstAttribute="trailing" secondItem="zTx-7Y-zvu" secondAttribute="trailing" constant="40" id="WcJ-2V-44B"/>
+                            <constraint firstItem="zTx-7Y-zvu" firstAttribute="centerY" secondItem="fm0-2k-jk8" secondAttribute="centerY" id="qYy-u3-7T9"/>
+                            <constraint firstItem="zTx-7Y-zvu" firstAttribute="leading" secondItem="MNP-1C-ruX" secondAttribute="leading" constant="40" id="s0r-TI-KjB"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="MNP-1C-ruX"/>
                     </view>
                     <connections>
-                        <outlet property="gif" destination="gQk-S8-h60" id="obG-NX-Vkt"/>
+                        <outlet property="tutorialLabel" destination="zTx-7Y-zvu" id="iai-0V-Gd7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qAd-ce-qTC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -38,10 +38,37 @@
                                     <action selector="toOnboarding:" destination="VgC-it-34h" eventType="touchUpInside" id="L0u-3b-hQo"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bingkai" translatesAutoresizingMaskIntoConstraints="NO" id="IPx-Kl-k5U">
+                                <rect key="frame" x="18" y="575" width="379" height="369"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="kiri" translatesAutoresizingMaskIntoConstraints="NO" id="0Yy-q7-0FX">
+                                <rect key="frame" x="48" y="622" width="188" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="kanan" translatesAutoresizingMaskIntoConstraints="NO" id="kQl-ns-MmW">
+                                <rect key="frame" x="107" y="595" width="307" height="163"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tengah" translatesAutoresizingMaskIntoConstraints="NO" id="q3e-ap-Kv0">
+                                <rect key="frame" x="119" y="696" width="170" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <view tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rZb-rx-hf1">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Ail-Qi-orU"/>
                     </view>
+                    <connections>
+                        <outlet property="coverView" destination="rZb-rx-hf1" id="hF8-xh-9IY"/>
+                        <outlet property="leftStone" destination="0Yy-q7-0FX" id="ERV-IN-wSJ"/>
+                        <outlet property="middleStone" destination="q3e-ap-Kv0" id="OYj-n3-JTE"/>
+                        <outlet property="rightStone" destination="kQl-ns-MmW" id="vMv-re-dRd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hxI-XW-vSW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -51,5 +78,9 @@
     <resources>
         <image name="Group 34" width="399" height="399"/>
         <image name="MainBackground" width="1688" height="3616"/>
+        <image name="bingkai" width="2560" height="2086"/>
+        <image name="kanan" width="1256" height="2094"/>
+        <image name="kiri" width="1096" height="1308"/>
+        <image name="tengah" width="1228" height="1238"/>
     </resources>
 </document>
