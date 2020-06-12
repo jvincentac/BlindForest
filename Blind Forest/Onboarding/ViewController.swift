@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         opening()
         addRain()
-        bgmAudio()
+//        bgmAudio()
     }
     override var prefersStatusBarHidden: Bool {
         return true
@@ -88,7 +88,7 @@ class ViewController: UIViewController {
             let sb = UIStoryboard(name: "MainPage", bundle: nil).instantiateViewController(withIdentifier: "main")
             sb.modalPresentationStyle = .fullScreen
             self.present(sb, animated: false, completion: nil)
-            stopAllAudio()
+//            stopAllAudio()
         }
         
         UIView.animateKeyframes(
@@ -116,7 +116,7 @@ class ViewController: UIViewController {
 
         do {
             let bgm = try AVAudioPlayer(contentsOf: url)
-            bgm.numberOfLoops = 3
+            bgm.numberOfLoops = -1
             bgm.play()
             soundArray.append(bgm)
         } catch {

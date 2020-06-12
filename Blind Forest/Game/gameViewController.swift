@@ -35,32 +35,34 @@ class gameViewController: UIViewController {
         [0,1,0,0,1,0],
         [0,1,2,1,1,0],
         [0,0,1,0,0,0],
-        [0,1,1,0,0,0],
+        [0,1,3,0,0,0],
         [0,0,0,0,0,0]
     ]
-    
+    var detik = Timer()
+    var countdown = Timer()
     var playerPosition : [Int] = []
     var time = 60
     let emitterNode = SKEmitterNode(fileNamed: "Rain.sks")!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        bgmAudio()
+//        bgmAudio()
         playerPosition = [1,map.count-2]
         setupSwipeGesture()
         addRain()
         timer.text = String(time)
         
-        Timer.scheduledTimer(withTimeInterval: TimeInterval(Int.random(in: 8...10)), repeats: true) { timer in
+        detik = Timer.scheduledTimer(withTimeInterval: TimeInterval(Int.random(in: 8...10)), repeats: true) { timer in
             self.setupPageAnimation()
-            self.thunderAudio()
+            
         }
         
-        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
+        countdown = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
             if self.time == 0 {
                 timer.invalidate()
                 //logic kalah
-                self.gameoverAudio()
+                self.detik.invalidate()
+                self.countdown.invalidate()
                 self.stopAllAudio()
                 let sb = UIStoryboard(name: "Results", bundle: nil).instantiateViewController(withIdentifier: "lose")
                 sb.modalPresentationStyle = .fullScreen
@@ -80,6 +82,7 @@ class gameViewController: UIViewController {
     }
     
     func setupPageAnimation() {
+        self.thunderAudio()
         blackView.alpha = 0
         UIView.animateKeyframes(
             withDuration: 3,
@@ -189,16 +192,21 @@ class gameViewController: UIViewController {
             stepAudio()
         }
         else if map[y][x] == 2 {
+            clueAudio(pan: -0.8)
             stepAudio()
         }
         else if map[y][x] == 3 {
+            clueAudio(pan: 0.8)
             stepAudio()
         }
         else if map[y][x] == 4 {
+            clueAudio(pan: 0)
             stepAudio()
         }
         else if map[y][x] == 5 {
             //pindah ke page menang
+            detik.invalidate()
+            countdown.invalidate()
             stepAudio()
             stopAllAudio()
             let sb = UIStoryboard(name: "Results", bundle: nil).instantiateViewController(withIdentifier: "win")
@@ -309,6 +317,19 @@ class gameViewController: UIViewController {
                 
             }
         }
+        if step % 5 == 0{
+            let path = Bundle.main.path(forResource: "grass", ofType:"mp3")!
+            let url = URL(fileURLWithPath: path)
+
+            do {
+                let sound = try AVAudioPlayer(contentsOf: url)
+                sound.play()
+                soundArray.append(sound)
+            } catch {
+                
+            }
+        }
+        
     }
     func thunderAudio(){
         let path = Bundle.main.path(forResource: "thunder", ofType:"mp3")!
@@ -322,14 +343,15 @@ class gameViewController: UIViewController {
             
         }
     }
-    func clueAudio(){
+    func clueAudio(pan : Float){
         let clue = ["help Kenji","over here Kenji","this way Kenji","come here Kenji"]
-        let index = Int.random(in: 0...clue.count)
+        let index = Int.random(in: 0...clue.count-1)
         let path = Bundle.main.path(forResource: clue[index], ofType:"mp3")!
         let url = URL(fileURLWithPath: path)
 
         do {
             let sound = try AVAudioPlayer(contentsOf: url)
+            sound.pan = pan
             sound.play()
             soundArray.append(sound)
         } catch {

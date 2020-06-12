@@ -16,7 +16,7 @@ class MainPageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        bgmAudio()
+//        bgmAudio()
     }
 
     @IBAction func toGame(_ sender: Any) {
