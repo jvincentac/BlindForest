@@ -8,6 +8,7 @@
 
 import UIKit
 import SpriteKit
+import AVFoundation
 
 class ViewController: UIViewController {
 
@@ -16,13 +17,16 @@ class ViewController: UIViewController {
     @IBOutlet weak var storyLabel: UILabel!
     
     let emitterNode = SKEmitterNode(fileNamed: "Rain.sks")!
-    
+    var soundArray : [AVAudioPlayer] = []
+    var bgm : AVAudioPlayer?
+    var thunder : AVAudioPlayer?
     var tapCounter = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         opening()
         addRain()
+        bgmAudio()
     }
     override var prefersStatusBarHidden: Bool {
         return true
@@ -64,14 +68,18 @@ class ViewController: UIViewController {
         
         tapCounter += 1
         
+        
         if tapCounter == 1 {
+            thunderAudio()
             storyLabel.text = "The only way to bring back the light is by collect all \"The three stone of light\" from spirit forest"
             forestImageView.image = #imageLiteral(resourceName: "forestBg2")
         } else if tapCounter == 2 {
+            thunderAudio()
             storyLabel.text = "You must find these stone but remember, always follow the sound that guide you."
             forestImageView.image = #imageLiteral(resourceName: "forestBg3")
         }
         else if tapCounter == 3 {
+            thunderAudio()
             storyLabel.text = "Use Your Earphone"
             forestImageView.image = #imageLiteral(resourceName: "forestBg3")
         }
@@ -80,6 +88,7 @@ class ViewController: UIViewController {
             let sb = UIStoryboard(name: "MainPage", bundle: nil).instantiateViewController(withIdentifier: "main")
             sb.modalPresentationStyle = .fullScreen
             self.present(sb, animated: false, completion: nil)
+            stopAllAudio()
         }
         
         UIView.animateKeyframes(
@@ -99,6 +108,38 @@ class ViewController: UIViewController {
                 }
         },
             completion: nil)
+    }
+    func bgmAudio(){
+
+        let path = Bundle.main.path(forResource: "bgm only", ofType:"mp3")!
+        let url = URL(fileURLWithPath: path)
+
+        do {
+            let bgm = try AVAudioPlayer(contentsOf: url)
+            bgm.numberOfLoops = 3
+            bgm.play()
+            soundArray.append(bgm)
+        } catch {
+            
+        }
+    }
+    
+    func thunderAudio(){
+        let path = Bundle.main.path(forResource: "thunder", ofType:"mp3")!
+        let url = URL(fileURLWithPath: path)
+
+        do {
+            let thunder = try AVAudioPlayer(contentsOf: url)
+            thunder.play()
+            soundArray.append(thunder)
+        } catch {
+            
+        }
+    }
+    func stopAllAudio(){
+        for audio in soundArray{
+            audio.stop()
+        }
     }
 }
 

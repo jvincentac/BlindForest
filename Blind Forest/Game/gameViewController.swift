@@ -8,6 +8,7 @@
 
 import UIKit
 import SpriteKit
+import AVFoundation
 
 class gameViewController: UIViewController {
     
@@ -15,6 +16,8 @@ class gameViewController: UIViewController {
     @IBOutlet weak var forestImageView: UIImageView!
     @IBOutlet weak var timer: UILabel!
     @IBOutlet weak var gif: UIImageView!
+    var soundArray : [AVAudioPlayer] = []
+    var step = 0
     
     //0 tembok
     //1 jalan
@@ -42,6 +45,7 @@ class gameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        bgmAudio()
         playerPosition = [1,map.count-2]
         setupSwipeGesture()
         addRain()
@@ -49,16 +53,23 @@ class gameViewController: UIViewController {
         
         Timer.scheduledTimer(withTimeInterval: TimeInterval(Int.random(in: 8...10)), repeats: true) { timer in
             self.setupPageAnimation()
+            self.thunderAudio()
         }
         
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
             if self.time == 0 {
                 timer.invalidate()
                 //logic kalah
+                self.gameoverAudio()
+                self.stopAllAudio()
                 let sb = UIStoryboard(name: "Results", bundle: nil).instantiateViewController(withIdentifier: "lose")
                 sb.modalPresentationStyle = .fullScreen
                 self.present(sb
                     , animated: false, completion: nil)
+            }else if self.time == 30{
+                self.wolfAudio()
+                self.time -= 1
+                self.timer.text = String(self.time)
             }
             else {
                 self.time -= 1
@@ -171,29 +182,164 @@ class gameViewController: UIViewController {
     
     func check(x: Int, y: Int) -> Bool {
         if map[y][x] == 0 {
-            //play sound tabrak
+            blockAudio()
             return false
         }
         else if map[y][x] == 1 {
-            
+            stepAudio()
         }
         else if map[y][x] == 2 {
-            
+            stepAudio()
         }
         else if map[y][x] == 3 {
-            
+            stepAudio()
         }
         else if map[y][x] == 4 {
-            
+            stepAudio()
         }
         else if map[y][x] == 5 {
             //pindah ke page menang
+            stepAudio()
+            stopAllAudio()
             let sb = UIStoryboard(name: "Results", bundle: nil).instantiateViewController(withIdentifier: "win")
             sb.modalPresentationStyle = .fullScreen
             self.present(sb
                 , animated: false, completion: nil)
         }
         return true
+    }
+    func bgmAudio(){
+
+        let path = Bundle.main.path(forResource: "bgm only", ofType:"mp3")!
+        let url = URL(fileURLWithPath: path)
+
+        do {
+            let bgm = try AVAudioPlayer(contentsOf: url)
+            bgm.play()
+            soundArray.append(bgm)
+        } catch {
+            
+        }
+    }
+    func blockAudio(){
+        let path = Bundle.main.path(forResource: "block", ofType:"mp3")!
+        let url = URL(fileURLWithPath: path)
+
+        do {
+            let sound = try AVAudioPlayer(contentsOf: url)
+            sound.play()
+            soundArray.append(sound)
+        } catch {
+            
+        }
+    }
+    
+    func completeAudio(){
+        let path = Bundle.main.path(forResource: "complete", ofType:"mp3")!
+        let url = URL(fileURLWithPath: path)
+
+        do {
+            let sound = try AVAudioPlayer(contentsOf: url)
+            sound.play()
+            soundArray.append(sound)
+        } catch {
+            
+        }
+    }
+    func gameoverAudio(){
+        let path = Bundle.main.path(forResource: "game over", ofType:"mp3")!
+        let url = URL(fileURLWithPath: path)
+
+        do {
+            let sound = try AVAudioPlayer(contentsOf: url)
+            sound.play()
+            soundArray.append(sound)
+        } catch {
+            
+        }
+    }
+    
+    func wolfAudio()
+    {
+        let path = Bundle.main.path(forResource: "wolf", ofType:"mp3")!
+        let url = URL(fileURLWithPath: path)
+
+        do {
+            let sound = try AVAudioPlayer(contentsOf: url)
+            sound.play()
+            soundArray.append(sound)
+        } catch {
+            
+        }
+    }
+    func grassAudio(){
+        let path = Bundle.main.path(forResource: "grass", ofType:"mp3")!
+        let url = URL(fileURLWithPath: path)
+
+        do {
+            let sound = try AVAudioPlayer(contentsOf: url)
+            sound.play()
+            soundArray.append(sound)
+        } catch {
+            
+        }
+    }
+    func stepAudio(){
+        step += 1
+        if step % 2 != 0{
+            let path = Bundle.main.path(forResource: "step_1", ofType:"mp3")!
+            let url = URL(fileURLWithPath: path)
+
+            do {
+                let sound = try AVAudioPlayer(contentsOf: url)
+                sound.play()
+                soundArray.append(sound)
+            } catch {
+                
+            }
+        }else{
+            let path = Bundle.main.path(forResource: "step_2", ofType:"mp3")!
+            let url = URL(fileURLWithPath: path)
+
+            do {
+                let sound = try AVAudioPlayer(contentsOf: url)
+                sound.play()
+                soundArray.append(sound)
+            } catch {
+                
+            }
+        }
+    }
+    func thunderAudio(){
+        let path = Bundle.main.path(forResource: "thunder", ofType:"mp3")!
+        let url = URL(fileURLWithPath: path)
+
+        do {
+            let sound = try AVAudioPlayer(contentsOf: url)
+            sound.play()
+            soundArray.append(sound)
+        } catch {
+            
+        }
+    }
+    func clueAudio(){
+        let clue = ["help Kenji","over here Kenji","this way Kenji","come here Kenji"]
+        let index = Int.random(in: 0...clue.count)
+        let path = Bundle.main.path(forResource: clue[index], ofType:"mp3")!
+        let url = URL(fileURLWithPath: path)
+
+        do {
+            let sound = try AVAudioPlayer(contentsOf: url)
+            sound.play()
+            soundArray.append(sound)
+        } catch {
+            
+        }
+    }
+    func stopAllAudio(){
+        for audio in soundArray{
+            audio.stop()
+        }
     }
     
 }
