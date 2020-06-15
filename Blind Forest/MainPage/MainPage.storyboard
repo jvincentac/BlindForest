@@ -27,11 +27,10 @@
                                     <action selector="toGame:" destination="VgC-it-34h" eventType="touchUpInside" id="WqB-Pq-t6J"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H6H-Uv-8Oh">
-                                <rect key="frame" x="326" y="44" width="68" height="48"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H6H-Uv-8Oh">
+                                <rect key="frame" x="32" y="44" width="36" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Story">
+                                <state key="normal" image="story">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -54,6 +53,14 @@
                                 <rect key="frame" x="119" y="696" width="170" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2SR-Lo-9ad">
+                                <rect key="frame" x="372" y="44" width="22" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="tutorial"/>
+                                <connections>
+                                    <action selector="toTutorial:" destination="VgC-it-34h" eventType="touchUpInside" id="DOs-cp-2PI"/>
+                                </connections>
+                            </button>
                             <view tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rZb-rx-hf1">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -64,9 +71,12 @@
                         <viewLayoutGuide key="safeArea" id="Ail-Qi-orU"/>
                     </view>
                     <connections>
+                        <outlet property="bingkai" destination="IPx-Kl-k5U" id="kq4-fp-bRe"/>
                         <outlet property="coverView" destination="rZb-rx-hf1" id="hF8-xh-9IY"/>
                         <outlet property="leftStone" destination="0Yy-q7-0FX" id="ERV-IN-wSJ"/>
+                        <outlet property="mainBg" destination="QdI-3x-A39" id="P3H-Tp-Ggb"/>
                         <outlet property="middleStone" destination="q3e-ap-Kv0" id="OYj-n3-JTE"/>
+                        <outlet property="playBtn" destination="4YF-16-BNk" id="QwW-S6-fbt"/>
                         <outlet property="rightStone" destination="kQl-ns-MmW" id="vMv-re-dRd"/>
                     </connections>
                 </viewController>
@@ -81,6 +91,8 @@
         <image name="bingkai" width="2560" height="2086"/>
         <image name="kanan" width="1256" height="2094"/>
         <image name="kiri" width="1096" height="1308"/>
+        <image name="story" width="72" height="80"/>
         <image name="tengah" width="1228" height="1238"/>
+        <image name="tutorial" width="44" height="100"/>
     </resources>
 </document>

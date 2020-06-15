@@ -11,7 +11,7 @@ import AVFoundation
 
 class FirstViewController: UIViewController {
     var bgm : AVAudioPlayer?
-    var soundArray : [AVAudioPlayer] = []
+    static var soundArray : [AVAudioPlayer] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +42,7 @@ class FirstViewController: UIViewController {
             let bgm = try AVAudioPlayer(contentsOf: url)
             bgm.numberOfLoops = -1
             bgm.play()
-            soundArray.append(bgm)
+            FirstViewController.soundArray.append(bgm)
 
         } catch {
             

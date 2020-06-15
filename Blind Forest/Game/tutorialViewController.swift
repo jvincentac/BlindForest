@@ -16,6 +16,7 @@ class tutorialViewController: UIViewController {
 
     var step = 0
     var soundArray : [AVAudioPlayer?] = []
+    var fromHome = false
     
     let map : [[Int]] = [
         [0,0,0,0,0,0,0],
@@ -128,11 +129,19 @@ class tutorialViewController: UIViewController {
             stepAudio()
             tutorialLabel.text = "Congratulations, You've Completed The Tutorial. Now The Text Will Disappear"
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
-                let sb = UIStoryboard(name: "Game", bundle: nil).instantiateViewController(withIdentifier: "game")
+            if !fromHome {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+                    let sb = UIStoryboard(name: "Game", bundle: nil).instantiateViewController(withIdentifier: "game")
+                    sb.modalPresentationStyle = .fullScreen
+                    self.present(sb, animated: false, completion: nil)
+                }
+            }
+            else {
+                let sb = UIStoryboard(name: "MainPage", bundle: nil).instantiateViewController(withIdentifier: "main")
                 sb.modalPresentationStyle = .fullScreen
                 self.present(sb, animated: false, completion: nil)
             }
+            
         }
         return true
     }
@@ -178,7 +187,7 @@ class tutorialViewController: UIViewController {
     }
     
     func clueAudio(pan : Float){
-        let clue = ["help Kenji","over here Kenji","this way Kenji","come here Kenji"]
+        let clue = ["over here Kenji","this way Kenji","come here Kenji"]
         let index = Int.random(in: 0...clue.count-1)
         let path = Bundle.main.path(forResource: clue[index], ofType:"mp3")!
         let url = URL(fileURLWithPath: path)

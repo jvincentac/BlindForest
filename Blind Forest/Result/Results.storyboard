@@ -19,11 +19,22 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tengahLose" translatesAutoresizingMaskIntoConstraints="NO" id="iBD-JG-F4A">
+                                <rect key="frame" x="0.0" y="326" width="421" height="224"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vlJ-2O-dVB">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="LXG-fK-7kc"/>
                     </view>
                     <connections>
+                        <outlet property="coverView" destination="vlJ-2O-dVB" id="7Hq-lQ-wAV"/>
+                        <outlet property="loseStonePicture" destination="iBD-JG-F4A" id="tA1-X4-sDN"/>
                         <outlet property="stonePicture" destination="fOf-Jr-50y" id="OTP-K5-p56"/>
                     </connections>
                 </viewController>
@@ -34,5 +45,6 @@
     </scenes>
     <resources>
         <image name="tengah" width="1228" height="1238"/>
+        <image name="tengahLose" width="381" height="385"/>
     </resources>
 </document>

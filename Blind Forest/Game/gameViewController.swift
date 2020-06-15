@@ -97,11 +97,13 @@ class gameViewController: UIViewController {
                 self.detik.invalidate()
                 self.countdown.invalidate()
                 self.stopAllAudio()
+                
                 let sb = UIStoryboard(name: "Results", bundle: nil).instantiateViewController(withIdentifier: "result") as! resultsViewController
                 sb.modalPresentationStyle = .fullScreen
                 sb.win = false
-                self.present(sb
-                    , animated: false, completion: nil)
+                sb.stage = self.stage
+                self.present(sb, animated: false, completion: nil)
+                
             }else if self.time == 30{
                 self.wolfAudio()
                 self.time -= 1
@@ -113,6 +115,10 @@ class gameViewController: UIViewController {
             }
         }
         
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
     
     func setStage() {
@@ -269,6 +275,7 @@ class gameViewController: UIViewController {
             UserDefaults.standard.set(stage + 1, forKey: "stage")
             let sb = UIStoryboard(name: "Results", bundle: nil).instantiateViewController(withIdentifier: "result") as! resultsViewController
             sb.modalPresentationStyle = .fullScreen
+            sb.stage = self.stage
             sb.win = true
             self.present(sb
                 , animated: false, completion: nil)
@@ -403,7 +410,7 @@ class gameViewController: UIViewController {
         }
     }
     func clueAudio(pan : Float){
-        let clue = ["help Kenji","over here Kenji","this way Kenji","come here Kenji"]
+        let clue = ["over here Kenji","this way Kenji","come here Kenji"]
         let index = Int.random(in: 0...clue.count-1)
         let path = Bundle.main.path(forResource: clue[index], ofType:"mp3")!
         let url = URL(fileURLWithPath: path)

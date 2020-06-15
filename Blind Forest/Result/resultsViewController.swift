@@ -13,45 +13,67 @@ import AVFoundation
 class resultsViewController: UIViewController {
 
     @IBOutlet weak var stonePicture: UIImageView!
+    @IBOutlet weak var loseStonePicture: UIImageView!
     
     let emitterNode = SKEmitterNode(fileNamed: "magic.sks")!
     let emitterNode2 = SKEmitterNode(fileNamed: "redSnow.sks")!
-    var win = true
-    let stage = UserDefaults.standard.object(forKey: "stage")
+    var win : Bool?
+    var stage = 0
     var soundArray : [AVAudioPlayer?] = []
+    @IBOutlet weak var coverView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if win {
+        print(stage)
+        if win == true{
             completeAudio()
             addPicture()
             addMagic(particle: emitterNode)
         }
-        else {
+        else if win == false{
             gameoverAudio()
-            addMagic(particle: emitterNode2)
             addPictureLose()
+            addMagic(particle: emitterNode2)
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        UIView.animate(withDuration: 5) {
+            self.coverView.alpha = 0
         }
     }
     
     func addPicture() {
-        if stage as! Int == 2 {
+        if stage == 1 {
             stonePicture.image = UIImage(named: "kiri")
             emitterNode.particleColor = .blue
         }
-        else if stage as! Int == 3 {
+        else if stage == 2 {
             stonePicture.image = UIImage(named: "kanan")
             emitterNode.particleColor = .yellow
         }
-        else if stage as! Int == 4 {
+        else if stage == 3 {
             stonePicture.image = UIImage(named: "tengah")
             emitterNode.particleColor = .red
         }
+        loseStonePicture.isHidden = true
     }
     
     func addPictureLose() {
-        //masukin gambar kalah
+        print(stage)
+        if stage == 1 {
+            loseStonePicture.image = UIImage(named: "kiriLose")
+            emitterNode2.particleColor = .blue
+        }
+        else if stage == 2 {
+            loseStonePicture.image = UIImage(named: "kananLose")
+            emitterNode2.particleColor = .yellow
+        }
+        else if stage == 3 {
+            loseStonePicture.image = UIImage(named: "tengahLose")
+            emitterNode2.particleColor = .red
+        }
+        stonePicture.isHidden = true
     }
     
     func addMagic(particle: SKEmitterNode) {
@@ -67,14 +89,14 @@ class resultsViewController: UIViewController {
         scene.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         scene.addChild(particle)
         
-        if win {
-            emitterNode.position.y = scene.frame.midY
+        if win! {
+            particle.position.y = scene.frame.midY
         }
         else {
-            emitterNode.position.y = scene.frame.maxY
+            particle.position.y = scene.frame.maxY
         }
         
-        emitterNode.particlePositionRange.dx = scene.frame.width
+        particle.particlePositionRange.dx = scene.frame.width
         
         view.addSubview(skView)
     }
@@ -99,7 +121,7 @@ class resultsViewController: UIViewController {
     }
     
     func completeAudio(){
-        let path = Bundle.main.path(forResource: "complete", ofType:"mp3")!
+        let path = Bundle.main.path(forResource: "complete 2", ofType:"mp3")!
         let url = URL(fileURLWithPath: path)
 
         do {
